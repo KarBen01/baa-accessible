@@ -105,7 +105,7 @@ section{
 .bg-img{
     margin-left: -150px;
     height: 100vh;
-    background: url(../Resources/Images/main2.jpg) no-repeat left top;
+    background: url(../Resources/Images/main1.jpg) no-repeat left top;
     background-size: cover;
     overflow: hidden;
     position: absolute;
@@ -210,4 +210,16 @@ section{
     -webkit-mask-image: linear-gradient(to top, black, transparent),
     linear-gradient(to right, black, transparent);
     mask-image: linear-gradient(black, transparent);
+}
+
+.invalid{
+    display: none;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: .875em;
+    color: #dc3545;
+}
+
+.invalid.show{
+    display: block;
 }

@@ -1,7 +1,7 @@
 <div class="container-fluid" id="datesContainer">
     <div class="pt-3 d-flex justify-content-center">
         <div class="col-12 p-3">
-            <div class="d-flex justify-content-between py-3"><h2>Shows </h2>
+            <div class="d-flex justify-content-between py-3"><h1 class="h2 fw-bold">Shows </h1>
                 <button class="btn btn-success" type="button" data-bs-toggle="modal" id="newShowBtn" data-bs-target="#addShowModal"><i
                         class="fa fa-plus"></i> Neu
                 </button>
@@ -11,9 +11,9 @@
                     <div class="col">
                         <div class="card h-100">
                             <div class="card-body">
-                                <div class="d-flex justify-content-between mb-3"><h5 class="my-auto card-title"><span termin-date></span> - <span
-                                        termin-title></span></h5>
-                                    <button class="ms-3 my-auto btn btn-outline-primary" edit-termin-button type="button"><i
+                                <div class="d-flex justify-content-between mb-3"><div class="h5 my-auto card-title"><span termin-date></span> - <span
+                                        termin-title></span></div>
+                                    <button class="ms-3 my-auto btn btn-outline-primary" edit-termin-button type="button" aria-label="Show bearbeiten"><i
                                             class="fa fa-pencil"></i>
                                     </button>
                                 </div>
@@ -35,27 +35,36 @@
     <div class="modal-dialog modal-fullscreen-sm-down">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" modal-header>New Show</h5>
+                <h5 class="modal-title" modal-header>Neue Show</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="mb-3">
                     <label for="showDate" class="form-label">Datum</label>
                     <input type="date" class="form-control" id="showDate" modal-date>
+                    <div id="valDate" class="invalid">
+                       Bitte gib ein Datum ein.
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="title" class="form-label">Show Name</label>
                     <input type="text" class="form-control" id="title" placeholder="Show Title" modal-title>
+                    <div id="valTitle" class="invalid">
+                        Bitte gib einen Show Namen ein.
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="link" class="form-label">Ticket Link</label>
                     <input type="link" class="form-control" id="link" placeholder="Link zum Ticketverkauf" modal-link>
+                    <div id="valLink" class="invalid">
+                        Bitte gib Ticket link ein.
+                    </div>
                 </div>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="addShow()" id="save-btn">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Abbrechen</button>
+                <button type="button" class="btn btn-primary" onclick="addShow()" id="save-btn">Änderungen speichern</button>
             </div>
         </div>
     </div>

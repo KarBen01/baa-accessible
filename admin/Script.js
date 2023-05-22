@@ -8,6 +8,18 @@ $("#newShowBtn").click(function () {
     document.getElementById("title").value = "";
     document.getElementById("link").value = "";
 
+
+        $("#valDate").removeClass("show");
+        $("#valTitle").removeClass("show");
+        $("#valLink").removeClass("show");
+
+    const header = modal.querySelector("[modal-header]");
+
+    header.textContent = "Show hinzufügen";
+
+    $("#save-btn")[0].textContent = "Show hinzufügen";
+
+
     $("#save-btn")[0].onclick = (function () {
         return function () {
             addShow()
@@ -98,8 +110,9 @@ function editShow(showId) {
     var show = shows.find(item => item.id === showId);
     const header = modal.querySelector("[modal-header]");
 
-    header.textContent = "Edit Show";
+    header.textContent = "Show bearbeiten";
 
+    $("#save-btn")[0].textContent = "Änderung speichern"
 
     $("#save-btn")[0].onclick = (function (lId) {
         return function () {
@@ -144,6 +157,25 @@ function updateShow(pId) {
     let lTitle = $("#title").val();
     let lLink = $("#link").val();
 
+
+    if(lDate === ''){
+        $("#valDate")[0].classList.add("show");
+    }else {
+        $("#valDate").removeClass("show");
+    }
+    if(lTitle === ''){
+        $("#valTitle")[0].classList.add("show");
+    }
+    else {
+        $("#valTitle").removeClass("show");
+    }
+    if(lLink === ''){
+        $("#valLink")[0].classList.add("show");
+    }
+    else {
+        $("#valLink").removeClass("show");
+    }
+
     if (lDate !== '' && lTitle !== '' && lLink !== '') {
         var myModal = bootstrap.Modal.getInstance(modal)
         myModal.hide();
@@ -178,6 +210,25 @@ function addShow() {
     let lDate = $("#showDate").val();
     let lTitle = $("#title").val();
     let lLink = $("#link").val();
+
+
+    if(lDate === ''){
+        $("#valDate")[0].classList.add("show");
+    }else {
+        $("#valDate").removeClass("show");
+    }
+    if(lTitle === ''){
+        $("#valTitle")[0].classList.add("show");
+    }
+    else {
+        $("#valTitle").removeClass("show");
+    }
+    if(lLink === ''){
+        $("#valLink")[0].classList.add("show");
+    }
+    else {
+        $("#valLink").removeClass("show");
+    }
 
     if (lDate !== '' && lTitle !== '' && lLink !== '') {
         var myModal = bootstrap.Modal.getInstance(modal)
